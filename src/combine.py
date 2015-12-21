@@ -20,6 +20,8 @@ for year in range(2011, 2015):
     if year==2014:
         col_names = col_names + ["Status"]
     year_data = pd.read_csv("input/san-francisco-%d.csv" % year,
+                            header=None,
+                            skiprows=1,
                             names=col_names)
     if year==2011:
         year_data["Benefits"] = np.nan # originally "Not Provided"
